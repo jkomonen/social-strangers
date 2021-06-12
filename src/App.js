@@ -51,7 +51,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Log into your Google account to begin chatting with strangers. Please refrain from swearing as it will result in a ban. Enjoy Chatting!!!</p>
+      <p>Log into your Google account to begin chatting with strangers. Please refrain from swearing as it will result in a ban. Enjoy Chatting!</p>
     </>
   )
 }
@@ -99,7 +99,7 @@ function ChatRoom() {
     <form onSubmit={sendMessage}>
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" disabled={!formValue}>Send</button>
 
     </form>
   </>)
