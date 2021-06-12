@@ -21,7 +21,6 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
 
 
 function App() {
@@ -44,7 +43,6 @@ function App() {
 }
 
 function SignIn() {
-
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
@@ -53,11 +51,11 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>Log into your Google account to begin chatting with strangers. Please refrain from swearing as it will result in a ban. Enjoy Chatting!!!</p>
     </>
   )
-
 }
+
 
 function SignOut() {
   return auth.currentUser && (
@@ -69,12 +67,10 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const query = messagesRef.orderBy('createdAt').limit(10000);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
-
   const [formValue, setFormValue] = useState('');
-
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -96,7 +92,6 @@ function ChatRoom() {
     <main>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-
       <span ref={dummy}></span>
 
     </main>
@@ -104,7 +99,6 @@ function ChatRoom() {
     <form onSubmit={sendMessage}>
 
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Message..." />
-
       <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
@@ -114,7 +108,6 @@ function ChatRoom() {
 
 function ChatMessage(props) {
   const { text, uid, photoURL } = props.message;
-
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (<>
@@ -124,6 +117,5 @@ function ChatMessage(props) {
     </div>
   </>)
 }
-
 
 export default App;
