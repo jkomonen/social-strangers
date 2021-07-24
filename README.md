@@ -8,16 +8,9 @@ Written in Javascript and bootstrapped with [Create React App](https://github.co
 Using Firebase to store user info, message logs, and banned users.\
 Hosted on a Firebase server with 24/7 uptime.
 
-# How to Use:
+# Try it out:
 
-- Live version: https://social-strangers.web.app
-
-OR
-
-- Clone repository
-```
-https://github.com/jkomonen/social-strangers.git
-```
+https://social-strangers.web.app
 
 ## Available Scripts
 
