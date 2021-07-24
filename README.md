@@ -1,16 +1,13 @@
 # Social Strangers
 
-This is a WhatsApp-like real time web application used to talk with users through text.
+This is a WhatsApp-like real time web application used to talk with users through text.\
+Try it out: https://social-strangers.web.app
 
 # Technologies
 
 Written in Javascript and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 Using Firebase to store user info, message logs, and banned users.\
 Hosted on a Firebase server with 24/7 uptime.
-
-# Try it out:
-
-https://social-strangers.web.app
 
 ## Available Scripts
 
