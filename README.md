@@ -3,6 +3,8 @@
 This is a WhatsApp-like real time web application used to talk with users through text.\
 Try it out: https://social-strangers.web.app
 
+![](readme_images/social_strangers.jpg)
+
 # Technologies
 
 Written in Javascript and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
